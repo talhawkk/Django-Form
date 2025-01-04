@@ -4,5 +4,5 @@ from home.form import Admissions
 # Create your views here.
 def home(request):
     stud=Student.objects.all()
-    forms=Admissions
+    forms=Admissions(auto_id=True)
     return render(request,'home/home.html',{'stu':stud,'form':forms})
