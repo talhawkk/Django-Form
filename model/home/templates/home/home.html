@@ -9,20 +9,21 @@
     <h1>M. Talha</h1>
     <hr>
     <h2>Django Form using Form API</h2>
+    <!-- <b>form.as_p</b> -->
     <form action="" method="get">
-        <!-- <table> -->
-            {{form}}
-            <!-- <button>Submit</button> -->
-        <!-- </table> -->
-            <input type="submit",value="Submit">
+        {% for f in form.visible_fields %}
+        {{f.label_tag}}
+        {{f}}
+        <br>
+        {%endfor%}
             <button>Submit</button>
             
     </form>
     <hr>
-    <b>form.as_p</b>
     <form action="" method="get">
         <!-- <table> -->
-            {{form.as_p}}
+            {{form}}
+            <!-- <button>Submit</button> -->
         <!-- </table> -->
             <input type="submit",value="Submit">
             <button>Submit</button>
