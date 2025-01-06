@@ -10,21 +10,20 @@
     <hr>
     <h2>Django Form using Form API</h2>
     <!-- <b>form.as_p</b> -->
-    <form action="" method="get">
+    <form action="" method="POST">
+        {%csrf_token%}
         {% for f in form.visible_fields %}
         {{f.label_tag}}
         {{f}}
         <br>
         {%endfor%}
-            <button>Submit</button>
-            
+            <input type="submit", value="submitt">
     </form>
     <hr>
-    <form action="" method="get">
-        <!-- <table> -->
+    <!-- <form action="" method="get">
+        <table>
             {{form}}
-            <!-- <button>Submit</button> -->
-        <!-- </table> -->
+        </table>
             <input type="submit",value="Submit">
             <button>Submit</button>
             
@@ -32,10 +31,10 @@
     <hr>
     <b>form.as_table</b>
     <form action="" method="get">
-        <!-- <table> -->
+        <table>
             {{form.as_table}}
-            <!-- <button>Submit</button> -->
-        <!-- </table> -->
+            <button>Submit</button>
+        </table>
             <input type="submit",value="Submit">
             <button>Submit</button>
             
@@ -43,9 +42,9 @@
     <hr>
     <b>form.as_ul</b>
     <form action="" method="get">
-        <!-- <table> -->
+        <table>
             {{form.as_ul}}
-        <!-- </table> -->
+        </table>
             <input type="submit",value="Submit">
             <button>Submit</button>
             
@@ -54,7 +53,7 @@
 
     <b>form.fieldname</b>
     <form action="" method="get">
-        <!-- <table> -->
+        <table>
             {{form.name}}
             <br>
             {{form.age}}
@@ -62,12 +61,12 @@
             {{form.username}}
             <br>
             {{form.email}}
-        <!-- </table> -->
+        </table>
             <input type="submit",value="Submit">
             <button>Submit</button>
             
     </form>
-    <hr>
+    <hr> -->
 
 
     <!-- <h2>Model and database Table in Django </h2> -->
