@@ -1,99 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>M. Talha</h1>
-    <hr>
-    <h2>Django Form using Form API</h2>
-    <!-- <b>form.as_p</b> -->
-    <form action="" method="POST">
-        {%csrf_token%}
-        {% for f in form.visible_fields %}
-        {{f.label_tag}}
-        {{f}}
-        <br>
-        {%endfor%}
-            <input type="submit", value="submitt">
-    </form>
-    <hr>
-    <!-- <form action="" method="get">
-        <table>
-            {{form}}
-        </table>
-            <input type="submit",value="Submit">
-            <button>Submit</button>
-            
-    </form>
-    <hr>
-    <b>form.as_table</b>
-    <form action="" method="get">
-        <table>
-            {{form.as_table}}
-            <button>Submit</button>
-        </table>
-            <input type="submit",value="Submit">
-            <button>Submit</button>
-            
-    </form>
-    <hr>
-    <b>form.as_ul</b>
-    <form action="" method="get">
-        <table>
-            {{form.as_ul}}
-        </table>
-            <input type="submit",value="Submit">
-            <button>Submit</button>
-            
-    </form>
-    <hr>
-
-    <b>form.fieldname</b>
-    <form action="" method="get">
-        <table>
-            {{form.name}}
-            <br>
-            {{form.age}}
-            <br>
-            {{form.username}}
-            <br>
-            {{form.email}}
-        </table>
-            <input type="submit",value="Submit">
-            <button>Submit</button>
-            
-    </form>
-    <hr> -->
-
-
-    <!-- <h2>Model and database Table in Django </h2> -->
-    <!-- {{stu}} -->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
     
-    <!-- {% if stu %}
-    <h2>show data</h2>
-    <table border="1">
-    <tr>
-        <th>ID</th>
-        <th>StuID</th>
-        <th>STuname</th>
-        <th>Stuemail</th>
-        <th>Stupassword</th>
-    </tr> 
-    {% for st in stu %}
-    <tr>
-    <td>{{st.id}}</td>
-    <td>{{st.stuid}}</td>
-    <td>{{st.stuname}}</td>
-    <td>{{st.stuemail}}</td>
-    <td>{{st.stupass}}</td>
-</tr>
-{% endfor %}
-</table>
-    {% else %}
-    <h2>not found</h2>
-    {% endif %} -->
-</body>
-</html>
+    {% if form.non_field_errors %}
+        <div style="color: red;">
+            {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+    <button type="submit">Submit</button>
+</form>

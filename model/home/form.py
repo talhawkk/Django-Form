@@ -5,5 +5,12 @@ class Admissions(forms.Form):
     username=forms.CharField()
     email=forms.EmailField()
     password=forms.CharField(widget=forms.PasswordInput())
-    # Upload_CV=forms.CharField(widget=forms.FileInput(), required=False)
-    
+    Rd=forms.CharField(widget=forms.PasswordInput())
+    def clean(self):
+        cleaned_data= super().clean()
+        valp=cleaned_data['password']
+        vale=cleaned_data['Rd']
+
+        if valp!=vale:
+
+            raise forms.ValidationError("Password Does Not match")
